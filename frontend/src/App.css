@@ -1,0 +1,292 @@
+/* Global Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+
+  font-family: "Poppins", "Segoe UI", sans-serif;
+
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      135deg,
+      #667eea,
+      #764ba2
+    );
+
+  color: #333;
+
+}
+
+
+/* Main Container */
+
+.container {
+
+  max-width: 900px;
+
+  margin: auto;
+
+  padding: 30px;
+
+}
+
+
+
+/* Cards */
+
+.card {
+
+  background: rgba(255,255,255,0.95);
+
+  border-radius: 25px;
+
+  border: none;
+
+  box-shadow:
+    0 15px 35px rgba(0,0,0,0.15);
+
+  animation: fadeIn 0.6s ease;
+
+}
+
+
+
+/* Headings */
+
+h1,
+h2,
+h3 {
+
+  font-weight: 700;
+
+  color: #5a189a;
+
+}
+
+
+
+p {
+
+  color:#666;
+
+  font-size:16px;
+
+}
+
+
+
+/* Buttons */
+
+button,
+.btn {
+
+
+  border:none;
+
+  border-radius:30px !important;
+
+  padding:12px 30px !important;
+
+  font-size:16px;
+
+  font-weight:600;
+
+  transition:0.3s ease;
+
+}
+
+
+
+/* Primary Button */
+
+.btn-primary {
+
+  background:
+  linear-gradient(
+    45deg,
+    #4361ee,
+    #4895ef
+  ) !important;
+
+}
+
+
+
+/* Success Button */
+
+.btn-success {
+
+  background:
+  linear-gradient(
+    45deg,
+    #06d6a0,
+    #1b9aaa
+  ) !important;
+
+}
+
+
+
+/* Hover Effect */
+
+button:hover,
+.btn:hover {
+
+
+  transform:
+  translateY(-3px)
+  scale(1.03);
+
+
+  box-shadow:
+  0 10px 20px rgba(0,0,0,0.2);
+
+
+}
+
+
+
+/* Inputs */
+
+
+input {
+
+  border-radius:15px !important;
+
+  padding:12px !important;
+
+  border:2px solid #ddd !important;
+
+  transition:0.3s;
+
+}
+
+
+
+input:focus {
+
+  border-color:#764ba2 !important;
+
+  box-shadow:
+  0 0 10px rgba(118,75,162,0.3) !important;
+
+}
+
+
+
+/* Quiz Options */
+
+
+.form-check {
+
+
+  background:#f8f9fa;
+
+  border-radius:15px;
+
+  padding:15px;
+
+  transition:0.3s;
+
+
+}
+
+
+
+.form-check:hover {
+
+
+  background:#e9ecef;
+
+  transform:translateX(5px);
+
+
+}
+
+
+
+/* Timer Badge */
+
+
+.badge {
+
+
+  padding:12px 20px;
+
+  border-radius:30px;
+
+}
+
+
+
+/* Animation */
+
+
+@keyframes fadeIn {
+
+
+  from {
+
+    opacity:0;
+
+    transform:
+    translateY(20px);
+
+  }
+
+
+  to {
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+
+  }
+
+
+}
+
+
+
+/* Mobile Responsive */
+
+
+@media(max-width:768px){
+
+
+  .container {
+
+    padding:15px;
+
+  }
+
+
+
+  h1 {
+
+    font-size:30px;
+
+  }
+
+
+
+  button,
+  .btn {
+
+    width:100%;
+
+    margin-top:10px;
+
+  }
+
+
+
+}

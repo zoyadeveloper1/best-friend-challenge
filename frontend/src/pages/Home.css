@@ -1,0 +1,725 @@
+* {
+  box-sizing: border-box;
+}
+
+.home-page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #090025 0%,
+      #1d0750 35%,
+      #42127d 65%,
+      #090025 100%
+    );
+
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+
+/* Background Image */
+
+.home-page::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(10, 0, 40, 0.55),
+      rgba(10, 0, 40, 0.7)
+    ),
+    url("/home-bg.png");
+
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0.35;
+
+  z-index: 0;
+}
+
+
+/* Glow */
+
+.bg-glow {
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  opacity: 0.5;
+
+  animation: glowMove 8s infinite alternate;
+
+  z-index: 1;
+}
+
+.glow-one {
+  background: #ff00cc;
+
+  top: -100px;
+  left: -100px;
+}
+
+.glow-two {
+  background: #5b4cff;
+
+  right: -100px;
+  top: 20%;
+}
+
+.glow-three {
+  background: #00d4ff;
+
+  bottom: -150px;
+  left: 30%;
+}
+
+@keyframes glowMove {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+
+  to {
+    transform: translate(80px, 50px) scale(1.2);
+  }
+}
+
+
+/* Navbar */
+
+.home-navbar {
+  position: relative;
+
+  z-index: 5;
+
+  height: 80px;
+
+  padding: 0 7%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+
+  background: rgba(255,255,255,0.06);
+
+  backdrop-filter: blur(15px);
+}
+
+.brand {
+  font-size: 25px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.brand span {
+  margin-left: 8px;
+}
+
+.player-badge {
+  padding: 10px 20px;
+
+  border-radius: 30px;
+
+  background: rgba(255,255,255,0.1);
+
+  border: 1px solid rgba(255,255,255,0.25);
+
+  font-weight: 600;
+
+  box-shadow:
+    0 0 20px rgba(255,255,255,0.1);
+}
+
+
+/* Main */
+
+.home-content {
+  position: relative;
+
+  z-index: 4;
+
+  min-height: calc(100vh - 80px);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 50px 20px;
+}
+
+
+/* Hero Card */
+
+.hero-card {
+  width: 650px;
+
+  padding: 45px;
+
+  text-align: center;
+
+  border-radius: 35px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.16),
+      rgba(255,255,255,0.05)
+    );
+
+  border: 1px solid rgba(255,255,255,0.3);
+
+  backdrop-filter: blur(25px);
+
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.45),
+    inset 0 0 30px rgba(255,255,255,0.04);
+
+  animation: cardAppear 1s ease;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* Trophy */
+
+.trophy {
+  font-size: 65px;
+
+  animation: trophyFloat 3s ease-in-out infinite;
+
+  filter:
+    drop-shadow(0 0 20px #ffd700);
+}
+
+@keyframes trophyFloat {
+
+  0%,100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(3deg);
+  }
+
+}
+
+
+/* Heading */
+
+.hero-card h1 {
+  margin: 10px 0;
+
+  font-size: 55px;
+
+  line-height: 1.05;
+
+  font-weight: 800;
+
+  letter-spacing: -2px;
+
+  text-shadow:
+    0 5px 20px rgba(0,0,0,0.3);
+}
+
+.hero-card h1 span {
+  background:
+    linear-gradient(
+      90deg,
+      #ff73d0,
+      #ffb347,
+      #ff73d0
+    );
+
+  background-size: 200% auto;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+
+  animation: gradientText 4s linear infinite;
+}
+
+@keyframes gradientText {
+  to {
+    background-position: 200% center;
+  }
+}
+
+
+/* Hero text */
+
+.hero-text {
+  font-size: 18px;
+
+  color: #ddd;
+
+  margin-bottom: 30px;
+}
+
+.hero-text strong {
+  color: #ffd34d;
+}
+
+
+/* Features */
+
+.feature-row {
+  display: flex;
+
+  justify-content: space-around;
+
+  padding: 20px;
+
+  margin-bottom: 25px;
+
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.07);
+
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.feature {
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #eee;
+
+  font-size: 13px;
+}
+
+.feature-icon {
+  font-size: 28px;
+
+  animation: iconBounce 3s infinite;
+}
+
+@keyframes iconBounce {
+
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+}
+
+
+/* Action Cards */
+
+.home-actions {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+.action-card {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  text-decoration: none;
+
+  color: white;
+
+  padding: 16px 20px;
+
+  border-radius: 20px;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.action-card:hover {
+  color: white;
+
+  transform:
+    translateX(8px)
+    scale(1.02);
+}
+
+
+/* Create Room */
+
+.create-room {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,220,130,0.35),
+      rgba(0,160,255,0.18)
+    );
+}
+
+.create-room:hover {
+  box-shadow:
+    0 10px 35px rgba(0,255,150,0.3);
+}
+
+
+/* Create Quiz */
+
+.create-quiz {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,166,0,0.35),
+      rgba(255,80,120,0.18)
+    );
+}
+
+.create-quiz:hover {
+  box-shadow:
+    0 10px 35px rgba(255,150,0,0.3);
+}
+
+
+/* Join Quiz */
+
+.join-quiz {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(80,100,255,0.4),
+      rgba(150,50,255,0.2)
+    );
+}
+
+.join-quiz:hover {
+  box-shadow:
+    0 10px 35px rgba(80,100,255,0.4);
+}
+
+
+/* Action Icon */
+
+.action-icon {
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-size: 27px;
+
+  background: rgba(255,255,255,0.13);
+
+  margin-right: 17px;
+}
+
+
+/* Action Content */
+
+.action-content {
+  flex: 1;
+
+  text-align: left;
+}
+
+.action-content h3 {
+  margin: 0;
+
+  font-size: 20px;
+
+  font-weight: 700;
+}
+
+.action-content p {
+  margin: 3px 0 0;
+
+  color: #ddd;
+
+  font-size: 13px;
+}
+
+
+/* Arrow */
+
+.arrow {
+  font-size: 30px;
+
+  transition: transform 0.3s ease;
+}
+
+.action-card:hover .arrow {
+  transform: translateX(7px);
+}
+
+
+/* Bottom */
+
+.challenge-text {
+  margin-top: 30px;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  color: #ffd6ff;
+
+  animation: textPulse 2s infinite;
+}
+
+@keyframes textPulse {
+
+  0%,100% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+}
+
+
+/* Floating Hearts */
+
+.floating-heart {
+  position: absolute;
+
+  z-index: 2;
+
+  font-size: 35px;
+
+  opacity: 0.7;
+
+  animation: heartFloat 5s ease-in-out infinite;
+}
+
+.heart-one {
+  left: 8%;
+  top: 25%;
+}
+
+.heart-two {
+  right: 10%;
+  top: 30%;
+
+  animation-delay: 1s;
+}
+
+.heart-three {
+  left: 15%;
+  bottom: 15%;
+
+  animation-delay: 2s;
+}
+
+.heart-four {
+  right: 15%;
+  bottom: 20%;
+
+  animation-delay: 3s;
+}
+
+@keyframes heartFloat {
+
+  0%,100% {
+    transform:
+      translateY(0)
+      rotate(-5deg);
+
+  }
+
+  50% {
+    transform:
+      translateY(-25px)
+      rotate(8deg);
+
+  }
+
+}
+
+
+/* Floating Quiz */
+
+.floating-quiz-card {
+  position: absolute;
+
+  right: 5%;
+  top: 45%;
+
+  z-index: 3;
+
+  padding: 20px;
+
+  width: 170px;
+
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255,255,255,0.2);
+
+  transform: rotate(8deg);
+
+  color: #ddd;
+
+  animation: quizFloat 4s infinite ease-in-out;
+}
+
+.quiz-title {
+  color: #ff72cf;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  margin-bottom: 10px;
+}
+
+@keyframes quizFloat {
+
+  0%,100% {
+    transform:
+      rotate(8deg)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      rotate(3deg)
+      translateY(-15px);
+  }
+
+}
+
+
+/* Controller */
+
+.game-controller {
+  position: absolute;
+
+  left: 5%;
+  bottom: 12%;
+
+  z-index: 3;
+
+  font-size: 70px;
+
+  opacity: 0.7;
+
+  transform: rotate(-15deg);
+
+  animation: controllerFloat 4s infinite;
+}
+
+@keyframes controllerFloat {
+
+  0%,100% {
+    transform:
+      rotate(-15deg)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      rotate(-5deg)
+      translateY(-15px);
+  }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .home-navbar {
+    padding: 0 20px;
+  }
+
+  .player-badge {
+    display: none;
+  }
+
+  .hero-card {
+    width: 100%;
+
+    padding: 30px 20px;
+
+    border-radius: 25px;
+  }
+
+  .hero-card h1 {
+    font-size: 42px;
+  }
+
+  .hero-text {
+    font-size: 15px;
+  }
+
+  .feature-row {
+    gap: 5px;
+  }
+
+  .feature {
+    font-size: 10px;
+  }
+
+  .feature-icon {
+    font-size: 22px;
+  }
+
+  .floating-quiz-card,
+  .game-controller {
+    display: none;
+  }
+
+  .floating-heart {
+    font-size: 25px;
+  }
+
+}
